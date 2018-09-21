@@ -60,11 +60,9 @@ public class Ejemplo1 {
     public int LeerFichero() throws FileNotFoundException, IOException{
         FileReader fr = new FileReader("1.xml");
         int aux = fr.read();
-        while(aux !=1){
-           fr.read();
-        
-            
+        while(aux !=-1){
+           fr.read();    
         }
-        return 0;
+            return -1;
     }
 }
