@@ -62,8 +62,9 @@ public class Ejemplo1 {
         int aux = fr.read();
         while(aux !=1){
            fr.read();
-           
+        
             
         }
+        return 0;
     }
 }
