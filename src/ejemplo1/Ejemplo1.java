@@ -36,9 +36,11 @@ public class Ejemplo1 {
         
         Ejemplo1 obj_fichero = new Ejemplo1();
         
-        System.out.println("LOL");
-        obj_fichero.EscribeFicheroTextoFileWriter();
-        obj_fichero.LeerFichero();
+        
+//        obj_fichero.EscribeFicheroTextoFileWriter();
+        //obj_fichero.EscribeFicheroTextoBufferedWriter();
+        //obj_fichero.LeerFicheroTextoBufferedReader();
+        //obj_fichero.LeerFichero();
         
         System.out.println("------------------------------");
         
@@ -46,9 +48,9 @@ public class Ejemplo1 {
     
     public void EscribeFicheroTextoFileWriter() {
         //Crea el String con la cadena XML
-        String texto = "Hola";
+        String texto = "Vamos a añadir más cosas";
             //Guarda en la variable nombre el nombre del archivo que se creará.
-        String nombre = "1.xml";
+        String nombre = "3.txt";
             try{
                 //Se crea un Nuevo objeto FileWriter
                     FileWriter fichero = new FileWriter (nombre);
@@ -59,39 +61,20 @@ public class Ejemplo1 {
                 }catch (IOException ex){
                     System.out.println("error al acceder al fichero"); }
     }
-    public int LeerFichero() throws FileNotFoundException, IOException{
-        FileReader fr = new FileReader("1.xml");
-        int aux = fr.read();
+    
+    public void LeerFichero() throws FileNotFoundException, IOException{
+        FileReader fr = new FileReader("3.txt");
+        int aux = 0;
         while(aux !=-1){
-           fr.read();    
+           aux = fr.read();
+           char leer =(char)aux;
+           System.out.print(leer);
         }
-            return -1;
+        fr.close();
     }
-//    //public void EscribeFicheroTextoFileWriter() {
-///////////////////////Crea el String con la cadena XML
-//                    String texto = "vamos a escribir en el fichero";
-///////////////////////Guarda en la variable nombre el nombre del archivo que se creará.
-//                    String nombre = "pepe.txt";
-//                    try{
-//////////////////////Se crea un Nuevo objeto FileWriter
-//                    FileWriter fichero = new FileWriter ("pepe.txt");
-//////////////////////Se escribe el fichero
-//                    fichero.write(texto + "\r\n");
-//                    while (equals(texto)){
-//                        
-//                    
-//                    
-//                    }
-//////////////////////// Se cierra el fichero
-//                    fichero.close();
-//                    }catch (IOException ex){
-//                    System.out.println("error al acceder al fichero"); 
-//                    }
-//}
-//            public void LeerFicheroTextoFileReader() {
-//////////////////////// se hace un try para poder acceder al fichero guardandolo en un buffer que tiene un strin en blanco.                 
-//                    try{
-//                   FileReader fichero = new FileReader ("pepe.txt");
+    
+//    public void LeerFicheroTextoBufferedReader(){
+//                   FileReader fichero = new FileReader ("3.txt");
 //                   BufferedReader miBuffer =new  BufferedReader(fichero);
 //                   String linea=" ";
 ////////////////////////  while  para leer fichero almacenandolo en un buffer todo el texto y que valla leyendo mas rapido de linea en linea                
@@ -101,19 +84,13 @@ public class Ejemplo1 {
 //                             if(linea!=null)   
 //                            System.out.println(linea);
 //                        }
-////                        fichero.close();
-//                           
-//                           
-//////////////////////// while para leer el fichero de letra en letra el ordenado busca una letra en el fichero y vuelve a si todo el rato                          
-////                        int c=0; 
-////                        while(c!=-1){
-////                            c=fichero.read();
-////                            char leer =(char)c;
-////                            System.out.print(leer);   
-////                        }
-////                        fichero.close();
-// 
-//                    }catch (IOException ex){
-//                    System.out.println("error al acceder al fichero"); }
-//}
+//                           catch (IOException ex){
+//                    System.out.println("error al acceder al fichero"); 
+//    }
+//    }
+        
 }
+
+
+
+
