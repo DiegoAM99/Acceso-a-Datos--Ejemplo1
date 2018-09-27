@@ -7,7 +7,6 @@ package ejemplo1;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-//import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -93,19 +92,21 @@ public class Ejemplo1 {
             }catch (IOException ex){
                     System.out.println("error al acceder al fichero");}
     }
-public void EscribeFicheroTextoBufferedWriter(){
-    try{
-        FileWriter fichero = new FileWriter ("3.txt");
-        BufferedWriter bw = new BufferedWriter(fichero);
-            bw.write("Vamos a añadir más cosas");
-            bw.newLine();
-            bw.write("Seguimos usando Buffered");
-            //Guardamos los cambios del fichero
-            bw.flush();  
-        }catch(IOException e){
-            System.out.println("Error E/S: "+e);
-        }
-    }
+//public void EscribeFicheroTextoBufferedWriter(){
+//    try{
+//        FileWriter fichero = new FileWriter ("3.txt");
+//        BufferedWriter bw = new BufferedWriter(fichero);
+//            bw.write("Vamos a añadir más cosas");
+//            bw.newLine();
+//            bw.write("Seguimos usando Buffered");
+//            //Guardamos los cambios del fichero
+//            bw.flush();
+              //Guarda y cierra el fichero
+//            bw.close();
+//        }catch(IOException e){
+//            System.out.println("Error E/S: "+e);
+//        }
+//    }
 }    
 
 
