@@ -6,12 +6,17 @@
 package ejemplo1;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+//import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+
+
+
+
 
 /**
  *
@@ -73,6 +78,20 @@ public class Ejemplo1 {
         fr.close();
     }
     
+    public void LeerFicheroTextoBufferedReader(){
+            try{
+                FileReader fichero = new FileReader ("3.txt");
+                BufferedReader miBuffer =new  BufferedReader(fichero);
+                String linea=" ";
+                while(linea!=null){
+                            linea=miBuffer.readLine();
+                            
+                             if(linea!=null)   
+                            System.out.println(linea);
+                        }
+            }catch (IOException ex){
+                    System.out.println("error al acceder al fichero");}
+    }
 //    public void LeerFicheroTextoBufferedReader(){
 //                   FileReader fichero = new FileReader ("3.txt");
 //                   BufferedReader miBuffer =new  BufferedReader(fichero);
