@@ -6,6 +6,7 @@
 package ejemplo1;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 //import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,9 +43,9 @@ public class Ejemplo1 {
         Ejemplo1 obj_fichero = new Ejemplo1();
         
         
-//        obj_fichero.EscribeFicheroTextoFileWriter();
+        //obj_fichero.EscribeFicheroTextoFileWriter();
         //obj_fichero.EscribeFicheroTextoBufferedWriter();
-        //obj_fichero.LeerFicheroTextoBufferedReader();
+        obj_fichero.LeerFicheroTextoBufferedReader();
         //obj_fichero.LeerFichero();
         
         System.out.println("------------------------------");
@@ -92,23 +93,20 @@ public class Ejemplo1 {
             }catch (IOException ex){
                     System.out.println("error al acceder al fichero");}
     }
-//    public void LeerFicheroTextoBufferedReader(){
-//                   FileReader fichero = new FileReader ("3.txt");
-//                   BufferedReader miBuffer =new  BufferedReader(fichero);
-//                   String linea=" ";
-////////////////////////  while  para leer fichero almacenandolo en un buffer todo el texto y que valla leyendo mas rapido de linea en linea                
-//                           while(linea!=null){
-//                            linea=miBuffer.readLine();
-//                            
-//                             if(linea!=null)   
-//                            System.out.println(linea);
-//                        }
-//                           catch (IOException ex){
-//                    System.out.println("error al acceder al fichero"); 
-//    }
-//    }
-        
-}
+public void EscribeFicheroTextoBufferedWriter(){
+    try{
+        FileWriter fichero = new FileWriter ("3.txt");
+        BufferedWriter bw = new BufferedWriter(fichero);
+            bw.write("Vamos a añadir más cosas");
+            bw.newLine();
+            bw.write("Seguimos usando Buffered");
+            //Guardamos los cambios del fichero
+            bw.flush();  
+        }catch(IOException e){
+            System.out.println("Error E/S: "+e);
+        }
+    }
+}    
 
 
 
